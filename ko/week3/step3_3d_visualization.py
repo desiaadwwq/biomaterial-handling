@@ -2,7 +2,12 @@ import numpy as np
 from scipy.interpolate import CubicSpline
 from scipy.integrate import simpson
 import matplotlib.pyplot as plt
+import matplotlib
 from mpl_toolkits.mplot3d import Axes3D
+
+# --- 한글 폰트 설정 (Windows: Malgun Gothic) ---
+matplotlib.rcParams['font.family'] = 'Malgun Gothic'
+matplotlib.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
 
 # ============================================================
 # Step 3: 3D 회전체 표면 재구성 및 시각화

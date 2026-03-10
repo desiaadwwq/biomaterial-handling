@@ -1,6 +1,11 @@
 import numpy as np
 from scipy.interpolate import CubicSpline
 import matplotlib.pyplot as plt
+import matplotlib
+
+# --- 한글 폰트 설정 (Windows: Malgun Gothic) ---
+matplotlib.rcParams['font.family'] = 'Malgun Gothic'
+matplotlib.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
 
 # ============================================================
 # Step 1: 아보카도 프로파일 데이터 입력 및 큐빅 스플라인 보간
