@@ -42,18 +42,20 @@ This repository is the official portfolio for the **Biomaterial Handling & Proce
 
 ## 📁 Repository Structure
 
-```
+```text
 biomaterial-handling/
-├── README.md          ← You are here (Language Selection)
-├── ko/                ← 한국어 콘텐츠 (Korean Content)
-│   ├── README.md
-│   ├── week2/
-│   └── week3/
-├── en/                ← English Content
-│   ├── README.md
-│   ├── week2/
-│   └── week3/
-└── .agents/workflows/ ← Automation workflows
+├── README.md          ← 최상위 안내 및 언어 선택 (Language Selection)
+├── ko/                ← 한국어 실습 콘텐츠 (Korean Content)
+│   ├── README.md      ← 한국어 메인 포트폴리오 문서
+│   ├── week2/         ← [2주차] 사과 원형도·구형도 분석 (Circularity & Sphericity)
+│   ├── week3/         ← [3주차] 아보카도 체적·표면적 추정 (Volume & Surface Area)
+│   └── week4/         ← [4주차] 농산물 밀도·공극률 측정 및 가상 패킹 (Density & Porosity)
+├── en/                ← 영어 실습 콘텐츠 (English Content)
+│   ├── README.md      ← English Main Portfolio Document
+│   ├── week2/         ← [Week 2] Circularity & Sphericity Analysis
+│   ├── week3/         ← [Week 3] Volume & Surface Area Estimation
+│   └── week4/         ← [Week 4] Density, Porosity & Virtual 3D Packing
+└── .agents/workflows/ ← 자동화 스크립트 및 스킬 모음 (Automation workflows)
 ```
 
 ---
