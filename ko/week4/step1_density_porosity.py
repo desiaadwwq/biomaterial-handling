@@ -26,7 +26,6 @@ volume_single_cm3 = 205.4
 mass_single_g = 215.0
 
 # 개별 객체의 밀도 (Particle Density) 계산
-# 생물자원 특성상 기공이 없다고 가정하면 진밀도 ≒ 겉보기밀도로 간주 가능
 density_particle = mass_single_g / volume_single_cm3
 
 print(f"{'='*50}")
