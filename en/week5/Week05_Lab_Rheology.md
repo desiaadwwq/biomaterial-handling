@@ -138,6 +138,10 @@ This curriculum translates thermodynamic viscosity constraints into a matrix to 
 - **Background**: Viscous fluids naturally default to Laminar flow orientations inside heat exchanger (e.g., sterilization) pipelines. Propelling extreme velocities or debilitating viscosity thresholds triggers a shift towards turbulent kinetic chaos.
 - **Prompt**: When injecting milk or fruit juice through a High-Temperature Short-Time (HTST) pasteurizer, laminar states offer unequivocally cheaper electrical bills due to fewer friction taxes. Yet developmentally, why does facility architecture intentionally sabotage this energy margin to aggressively enforce 'Turbulent' fluid motion?
 
+### Topic 4: Extension to Non-Newtonian Fluid Pipeline Design
+- **Background**: This lab calculates friction loss (Hagen-Poiseuille) based on a 'Clear Apple Juice (Newtonian fluid)' model, where viscosity remains constant and is strictly influenced by temperature. However, real-world processing plants frequently transport fluids like high-concentration tomato paste or starch slurry, whose viscosity fluctuates massively under pump shear stress or agitation time.
+- **Prompt**: If we scale this targeting pipeline to handle Bingham Plastic fluids (which refuse to flow until a critical Yield Stress is breached) or Pseudoplastic fluids (which undergo severe shear-thinning as velocity increases), how should we technically recalibrate the current Python viscosity mathematical equations and pump power estimation models?
+
 ---
 
 ## 4. 📝 Evaluation Quiz Repository
