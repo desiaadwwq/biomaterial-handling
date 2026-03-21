@@ -423,6 +423,14 @@ Having processed total operational bills from 10 to 80 degrees within the `cost_
 **Background**: The Herschel-Bulkley model (Bingham plastic class) requires initial shear force exceeding the yield stress ($\tau_y$) to instigate flow.
 > **Prompt**: Following a long holiday, when pumping highly concentrated paste that has solidified inside a dormant pipeline, what are the critical motor design considerations and pipe rupture risks during the initial pump startup sequence?
 
+### Discussion 3: Dilatant Fluids and System Relief Valves
+**Background**: Conveying corn starch suspension ($n>1$) is susceptible to sudden viscosity spikes. Minor pipe blockages that temporarily surge impeller speed can instantly petrify the fluid matrix, risking severed motor shafts or catastrophic pipe ruptures.
+> **Prompt**: Within pipeline infrastructures handling shear-thickening fluids, how should mechanical Safety Relief Valves be computationally designed and physically positioned to intercept explosive pressure overloads most rapidly?
+
+### Discussion 4: Power Law Fitting Errors & $R^2$ Reliability Bounds
+**Background**: Step 1 python script arbitrarily estimates $K$ and $n$. However, embedding scattered outlier-heavy noise data yielding sub-0.8 $R^2$ regressions into facility pump formulas risks fatal design failures.
+> **Prompt**: Recognizing major sensor distortions or entrapped air cavities inducing massive data scatter, invent an engineered pythonic solution utilizing data preprocessing algorithms to purge outliers before executing the core regression fitting.
+
 ## 📝 Quiz Questions
 
 ### Q1. [Theory] Characteristics of Shear-Thinning Fluids
@@ -453,6 +461,51 @@ In the Power Law equation ($\tau = K \dot{\gamma}^n$), which academic term desig
 <summary>View Answer</summary>
 
 **Answer: B** — When $n > 1$, applying rapid force structurally hardens the liquid, a trait distinctly known as Dilatant behavior.
+</details>
+
+### Q3. [Theory] Universal Breadth of the Herschel-Bulkley Equation
+Identify the structural formula for the Herschel-Bulkley model, acclaimed dynamically for universally encapsulating Bingham Plastics, Pure Power Law, and raw Newtonian mechanics within a single master equation:
+| Option | Content |
+| --- | --- |
+| A | $\tau = \mu \dot{\gamma}$ |
+| B | $\tau = K \dot{\gamma}^n$ |
+| **C** | **$\tau = \tau_y + K \dot{\gamma}^n$** |
+| D | $\eta = K \dot{\gamma}^{n-1}$ |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — By merging the Yield Stress ($\tau_y$) coordinate with the standard exponential Power Law architecture, scientists created a universal skeleton that elegantly downgrades into Newtonian formulas simply by assigning $\tau_y=0$ and $n=1$.
+</details>
+
+### Q4. [Application] Tracking Apparent Viscosity Dynamics
+For a shear-thinning fluid defined by $n=0.6$, what happens to its Apparent Viscosity and required pump motor torque dynamics when aggressively agitated at extreme high shear rates within the pipe lumen?
+| Option | Content |
+| --- | --- |
+| A | Apparent viscosity skyrockets, plummeting total energy efficiency. |
+| B | Viscosity stubbornly mirrors Newtonian consistency, plateauing the energy curve. |
+| **C** | **Apparent Viscosity steeply collapses, temporarily thinning the fluid into a watery state which exponentially eases pumping.** |
+| D | Spontaneous catastrophic Yield Stress initiates, immediately stalling impeller motors. |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — Possessing flow matrices under $n<1$, extreme kinetic shear fractures temporary molecular networks, rendering swift liquidity that vastly streamlines mass delivery capabilities.
+</details>
+
+### Q5. [Python Code] Extracting `curve_fit` Internal Arrays
+During our Python implementation scaling the `scipy.optimize.curve_fit` regression loop, what exact mathematical data is exclusively encapsulated within the primary output array `popt`?
+| Option | Content |
+| --- | --- |
+| A | Mathematical average arrays of the baseline simulated X-coordinates. |
+| **B** | **The ultimate optimized fitting parameters mathematically solved (i.e. finalized $K$ and $n$ variables).** |
+| C | Raw residual covariance logic grids derived exclusively from first-derivative errors. |
+| D | Comprehensive $R^2$ confidence interval percentile ratios. |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — SciPy logically partitions output; `popt` contains the exact targeted array of Optimal Evaluated Parameters solving the target equation, whereas secondary limits yield covariance error matrices (`pcov`).
 </details>
 
 ---

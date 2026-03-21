@@ -62,6 +62,18 @@ This curriculum engineers computer vision algorithms to dynamically extract intr
 - **Background**: Pseudoplastic fluids ($n<1$) notoriously suffer viscosity degradation near the high-shear pipe walls while sustaining rigid cores at the low-shear center trajectory.
 - **Prompt**: Analyze whether this radical radial 'Viscosity Imbalance' structurally assists or drastically jeopardizes conductive heat transfer efficiencies inside pasteurization heat exchangers compared to homogenous Newtonian liquid mediums.
 
+### Topic 2: Yield Stress and Initial Pump Activation
+- **Background**: The Herschel-Bulkley model (Bingham plastic class) requires initial shear force exceeding the yield stress ($\tau_y$) to instigate flow.
+- **Prompt**: Following a long holiday, when pumping highly concentrated paste that has solidified inside a dormant pipeline, what are the critical motor design considerations and pipe rupture risks during the initial pump startup sequence?
+
+### Topic 3: Dilatant Fluids and System Relief Valves
+- **Background**: Conveying corn starch suspension ($n>1$) is susceptible to sudden viscosity spikes. Minor pipe blockages that temporarily surge impeller speed can instantly petrify the fluid matrix, risking severed motor shafts or catastrophic pipe ruptures.
+- **Prompt**: Within pipeline infrastructures handling shear-thickening fluids, how should mechanical Safety Relief Valves be computationally designed and physically positioned to intercept explosive pressure overloads most rapidly?
+
+### Topic 4: Power Law Fitting Errors & $R^2$ Reliability Bounds
+- **Background**: Step 1 python script arbitrarily estimates $K$ and $n$. However, embedding scattered outlier-heavy noise data yielding sub-0.8 $R^2$ regressions into facility pump formulas risks fatal design failures.
+- **Prompt**: Recognizing major sensor distortions or entrapped air cavities inducing massive data scatter, invent an engineered pythonic solution utilizing data preprocessing algorithms to purge outliers before executing the core regression fitting.
+
 ---
 
 ## 3. Lab Assignments & Github Requirements
