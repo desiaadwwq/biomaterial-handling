@@ -19,6 +19,7 @@
 | Week 03 | 체적·표면적 수치 적분 추정 | [`ko/week3/`](ko/week3/) |
 | Week 04 | 밀도·공극률 측정 및 가상 패킹 시뮬레이션 | [`ko/week4/`](ko/week4/) |
 | Week 05 | 유변학적 특성(점도, 하겐-푸아죄유, 레이놀즈) 최적화 | [`ko/week5/`](ko/week5/) |
+| Week 06 | 비뉴턴 유체의 복합 거동 및 파워 로우 피팅 시뮬레이션 | [`ko/week6/`](ko/week6/) |
 
 > 📝 **[주차별 심화 토론 & 퀴즈 모음](ko/QUIZ_BANK.md)**
 
@@ -37,6 +38,7 @@ This repository is the official portfolio for the **Biomaterial Handling & Proce
 | Week 03 | Volume & Surface Area Estimation | [`en/week3/`](en/week3/) |
 | Week 04 | Density, Porosity & Virtual 3D Packing | [`en/week4/`](en/week4/) |
 | Week 05 | Rheological Properties (Viscosity, Reynolds) Optimization | [`en/week5/`](en/week5/) |
+| Week 06 | Complex Non-Newtonian Behavior & Power Law Simulation | [`en/week6/`](en/week6/) |
 
 > 📝 **[Discussion Topics & Quiz Bank](en/QUIZ_BANK.md)**
 
@@ -52,13 +54,15 @@ biomaterial-handling/
 │   ├── week2/         ← [2주차] 사과 원형도·구형도 분석 (Circularity & Sphericity)
 │   ├── week3/         ← [3주차] 아보카도 체적·표면적 추정 (Volume & Surface Area)
 │   ├── week4/         ← [4주차] 농산물 밀도·공극률 측정 및 가상 패킹 (Density & Porosity)
-│   └── week5/         ← [5주차] 유변학적 특성 최적화 (Rheological Optimization)
+│   ├── week5/         ← [5주차] 유변학적 특성 최적화 (Rheological Optimization)
+│   └── week6/         ← [6주차] 비뉴턴 유체의 복합 거동 (Non-Newtonian Fluids)
 ├── en/                ← 영어 실습 콘텐츠 (English Content)
 │   ├── README.md      ← English Main Portfolio Document
 │   ├── week2/         ← [Week 2] Circularity & Sphericity Analysis
 │   ├── week3/         ← [Week 3] Volume & Surface Area Estimation
 │   ├── week4/         ← [Week 4] Density, Porosity & Virtual 3D Packing
-│   └── week5/         ← [Week 5] Rheological Properties Optimization
+│   ├── week5/         ← [Week 5] Rheological Properties Optimization
+│   └── week6/         ← [Week 6] Complex Non-Newtonian Behavior & Power Law Simulation
 └── .agents/workflows/ ← 자동화 스크립트 및 스킬 모음 (Automation workflows)
 ```
 

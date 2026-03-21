@@ -410,4 +410,51 @@ Having processed total operational bills from 10 to 80 degrees within the `cost_
 
 ---
 
+# Week 06: Complex Behavior of Non-Newtonian Fluids
+> 🔗 [View Detailed Lab Tutorial](week6/Week06_Lab_NonNewtonian.md)
+
+## 💡 Discussion Topics
+
+### Discussion 1: Shear-Thinning Phenomena & Imbalanced Pipe Velocity Profiles
+**Background**: Pseudoplastic fluids ($n<1$) notoriously suffer viscosity degradation near the high-shear pipe walls while sustaining rigid cores at the low-shear center trajectory.
+> **Prompt**: Analyze whether this radical radial 'Viscosity Imbalance' structurally assists or drastically jeopardizes conductive heat transfer efficiencies inside pasteurization heat exchangers compared to homogenous Newtonian liquid mediums.
+
+### Discussion 2: Yield Stress and Initial Pump Activation
+**Background**: The Herschel-Bulkley model (Bingham plastic class) requires initial shear force exceeding the yield stress ($\tau_y$) to instigate flow.
+> **Prompt**: Following a long holiday, when pumping highly concentrated paste that has solidified inside a dormant pipeline, what are the critical motor design considerations and pipe rupture risks during the initial pump startup sequence?
+
+## 📝 Quiz Questions
+
+### Q1. [Theory] Characteristics of Shear-Thinning Fluids
+Which of the following correctly describes a shear-thinning (pseudoplastic) fluid like ketchup?
+| Option | Content |
+| --- | --- |
+| A | Viscosity continuously rises as more force is applied. |
+| **B** | **Apparent viscosity decreases as the shear rate escalates.** |
+| C | Exhibits identical viscosity to Newtonian fluids across all shear zones. |
+| D | It will absolutely never flow without a yield stress block. |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — By definition, its flow index ($n$) is less than 1, causing the fluid structure to break down and thin out under high shear forces.
+</details>
+
+### Q2. [Theory] Significance of the Flow Index (n)
+In the Power Law equation ($\tau = K \dot{\gamma}^n$), which academic term designates fluids where the flow index $n > 1$?
+| Option | Content |
+| --- | --- |
+| A | Bingham Plastic |
+| **B** | **Dilatant (Shear Thickening)** |
+| C | Pseudoplastic (Shear Thinning) |
+| D | Newtonian |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — When $n > 1$, applying rapid force structurally hardens the liquid, a trait distinctly known as Dilatant behavior.
+</details>
+
+---
+
 *This document is updated as new weeks are added.*

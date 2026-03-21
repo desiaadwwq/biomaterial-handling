@@ -127,7 +127,8 @@ Update the `README.md` file in the top-level folder each week to build your port
   - `[Week 03]` Performed avocado volume/surface area estimation via numerical integration
   - `[Week 04]` Calculated density/porosity and implemented 3D virtual packing
   - `[Week 05]` Developed a 4-step simulator for apple juice viscosity trade-offs and Reynolds flow optimization.
-  - `[Week 06]` (To be updated next week)
+  - `[Week 06]` Completed power law fitting and yield stress analysis simulation for starch paste and tomato paste.
+  - `[Week 07]` (To be updated next week)
 
 ---
 *After completing your assignment, submit your GitHub repository URL (e.g., `https://github.com/your-username/biomaterial-handling/tree/main/en/week02`) to your TA/professor for final grading.*
