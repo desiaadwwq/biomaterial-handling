@@ -55,8 +55,38 @@ Investigate the trade-off relationship between viscosity friction resistance (Pr
   - [`step4_reynolds_simulation.py`](week5/step4_reynolds_simulation.py): Laminar/turbulent state transition and mixing forced vortex dynamic particle animation according to Reynolds number increase.
 - ➡️ **[View Detailed Lab Tutorial for This Week](week5/Week05_Lab_Rheology.md)**
 
-### [Week 06] (To be updated in upcoming weeks)
+### [Week 06] Complex Non-Newtonian Behavior & Flow Model Fitting
+Fit non-Newtonian behavior (shear thinning, thickening, Bingham plastic) to Power Law and Herschel-Bulkley models, and implement an apparent viscosity/yield stress simulator.
+- **Key Learning Scripts**:
+  - [`step1_powerlaw_curve_fit.py`](week6/step1_powerlaw_curve_fit.py): Power Law fitting inverse calculation
+  - [`step2_apparent_viscosity.py`](week6/step2_apparent_viscosity.py): Apparent viscosity slider simulator
+  - [`step3_herschel_bulkley_yield.py`](week6/step3_herschel_bulkley_yield.py): Herschel-Bulkley yield stress analysis
+- ➡️ **[View Detailed Lab Tutorial for This Week](week6/Week06_Lab_Non_Newtonian_Fluids.md)**
+
+### [Week 07] Viscoelastic Properties — Creep & Stress Relaxation
+Simulation of creep and stress relaxation for viscoelastic models (Maxwell, Kelvin-Voigt, Burgers) and practical training on 4-parameter inverse fitting.
+- **Sample Specimen**: Apple (Fuji) texture analyzer stress relaxation and creep data
+- **Key Learning Scripts**:
+  - [`step1_maxwell_relaxation.py`](week7/step1_maxwell_relaxation.py): Maxwell stress relaxation simulation (comparison of 3 η values)
+  - [`step2_burgers_creep_fit.py`](week7/step2_burgers_creep_fit.py): Burgers 4-parameter creep curve fitting
+  - [`step3_viscoelastic_simulator.py`](week7/step3_viscoelastic_simulator.py): Interactive viscoelastic simulator (model switching + dual plot)
+- ➡️ **[View Detailed Lab Tutorial for This Week](week7/Week07_Lab_Viscoelastic_Properties.md)**
+
+### [Week 08] Midterm Exam
+- Comprehensive evaluation covering Weeks 1–7.
+
+### [Week 09] Contact Stress & Hertz Theory — Mechanical Properties I
+Analyze contact radius, maximum stress, and pressure distribution of curved biomaterials based on Hertz Contact Theory using Python, and perform roller material optimization simulation for a sorter.
+- **Sample Specimen**: Apple (Fuji) texture analyzer compression data
+- **Key Learning Scripts**:
+  - [`step1_hertz_calculator.py`](week9/step1_hertz_calculator.py): Hertz contact stress calculator (comparison of 4 contact material types)
+  - [`step2_pressure_distribution.py`](week9/step2_pressure_distribution.py): 3D visualization of contact pressure distribution + stress profile by depth
+  - [`step3_hertz_contact_simulator.py`](week9/step3_hertz_contact_simulator.py): Interactive contact simulator (sliders + radio buttons)
+- ➡️ **[View Detailed Lab Tutorial for This Week](week9/Week09_Lab_Contact_Stress_Hertz.md)**
+
+### [Week 10] (To be updated in upcoming weeks)
 - (Next week update...)
+
 
 ---
 
@@ -128,7 +158,10 @@ Update the `README.md` file in the top-level folder each week to build your port
   - `[Week 04]` Calculated density/porosity and implemented 3D virtual packing
   - `[Week 05]` Developed a 4-step simulator for apple juice viscosity trade-offs and Reynolds flow optimization.
   - `[Week 06]` Completed power law fitting and yield stress analysis simulation for starch paste and tomato paste.
-  - `[Week 07]` (To be updated next week)
+  - `[Week 07]` Developed creep/stress relaxation simulations for viscoelastic models (Maxwell, KV, Burgers).
+  - `[Week 08]` Midterm Exam (Coverage: Week 1–7).
+  - `[Week 09]` Developed Hertz contact stress calculator, 3D pressure distribution visualization, and interactive simulator.
+  - `[Week 10]` (To be updated next week)
 
 ---
 *After completing your assignment, submit your GitHub repository URL (e.g., `https://github.com/your-username/biomaterial-handling/tree/main/en/week02`) to your TA/professor for final grading.*

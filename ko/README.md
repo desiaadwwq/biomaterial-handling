@@ -18,8 +18,8 @@
 
 ### [Week 02] 기하학적 형태 지표(원형도, 구형도) 분석 알고리즘 구현
 디지털 이미지 프로세싱 기초 기법들을 익히고, 영상을 활용해 사과 표본의 핵심 물리적 특성인 **원형도(Circularity)와 구형도(Sphericity)**를 산출합니다.
-- **[A군] 정상 사과 데이터 ([`apple_side_A.png`](week2/apple_side_A.png), [`apple_top_A.png`](week2/apple_top_A.png))**: 둥글고 대칭에 가까운 정상 표본
-- **[B군] 10% 왜곡 사과 데이터 ([`apple_side_B.png`](week2/apple_side_B.png), [`apple_top_B.png`](week2/apple_top_B.png))**: 한쪽 축이 일그러진 비대칭 표본
+- **[A군] 정상 사과 데이터 ([`apple_side_A.png`](week2/images/apple_side_A.png), [`apple_top_A.png`](week2/images/apple_top_A.png))**: 둥글고 대칭에 가까운 정상 표본
+- **[B군] 10% 왜곡 사과 데이터 ([`apple_side_B.png`](week2/images/apple_side_B.png), [`apple_top_B.png`](week2/images/apple_top_B.png))**: 한쪽 축이 일그러진 비대칭 표본
 - **주요 학습 스크립트**:
   - [`step1_preprocess.py`](week2/step1_preprocess.py): 이미지 로딩 및 그레이스케일, 블러 노이즈 제거 전처리
   - [`step2_contour.py`](week2/step2_contour.py): Otsu 알고리즘 이진화 및 객체 윤곽선(Contour) 분리
@@ -55,7 +55,36 @@
   - [`step4_reynolds_simulation.py`](week5/step4_reynolds_simulation.py): 레이놀즈 수 상승에 따른 층류/난류 상태 전이 및 믹싱 강제 와류 동적 파티클 애니메이션
 - ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week5/05주차_실습_유변학적특성.md)**
 
-### [Week 06] (이후 실습 내용 지속 업데이트 예정)
+### [Week 06] 비뉴턴 유체의 복합 거동 분석 및 유동 모델 피팅
+비뉴턴 유체(전단 담화, 전단 농화, 빙햄 플라스틱)의 거동을 Power Law 및 Herschel-Bulkley 모델로 피팅하고, 겉보기 점도 및 항복 응력 시뮬레이터를 구현
+- **주요 학습 스크립트**:
+  - [`step1_powerlaw_curve_fit.py`](week6/step1_powerlaw_curve_fit.py): Power Law 곡선 피팅 역산
+  - [`step2_apparent_viscosity.py`](week6/step2_apparent_viscosity.py): 겉보기 점도 슬라이더 시뮬레이터
+  - [`step3_herschel_bulkley_yield.py`](week6/step3_herschel_bulkley_yield.py): Herschel-Bulkley 항복 응력 분석
+- ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week6/06주차_실습_비뉴턴유체.md)**
+
+### [Week 07] 점탄성 특성 — 크리프와 응력 이완
+점탄성 모델(Maxwell, Kelvin-Voigt, Burgers)의 크리프 및 응력 이완 시뮬레이션과 4-파라미터 역산 피팅 실습
+- **실습 대상 시료**: 사과(Fuji) 텍스처 애널라이저 응력 이완 및 크리프 데이터
+- **주요 학습 스크립트**:
+  - [`step1_maxwell_relaxation.py`](week7/step1_maxwell_relaxation.py): Maxwell 응력 이완 시뮬레이션 (3가지 η 비교)
+  - [`step2_burgers_creep_fit.py`](week7/step2_burgers_creep_fit.py): Burgers 4-파라미터 크리프 곡선 피팅
+  - [`step3_viscoelastic_simulator.py`](week7/step3_viscoelastic_simulator.py): 인터랙티브 점탄성 시뮬레이터 (모델 전환 + 듀얼 플롯)
+- ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week7/07주차_실습_점탄성특성.md)**
+
+### [Week 08] 중간고사
+- 2~7주차 범위 종합 평가
+
+### [Week 09] 접촉 응력과 헤르츠 이론 — 기계적 특성 I
+곡면 생물자원의 접촉 역학(Hertz Contact Theory)을 기반으로 접촉 반경, 최대 응력, 압력 분포를 Python으로 분석하고, 선별기 롤러 재질 최적화 시뮬레이션 수행
+- **실습 대상 시료**: 사과(Fuji) 텍스처 애널라이저 압축 데이터
+- **주요 학습 스크립트**:
+  - [`step1_hertz_calculator.py`](week9/step1_hertz_calculator.py): 헤르츠 접촉 응력 계산기 (4종 접촉면 재질 비교)
+  - [`step2_pressure_distribution.py`](week9/step2_pressure_distribution.py): 접촉 압력 분포 3D 시각화 + 깊이별 응력 프로파일
+  - [`step3_hertz_contact_simulator.py`](week9/step3_hertz_contact_simulator.py): 인터랙티브 접촉 시뮬레이터 (슬라이더 + 라디오 버튼)
+- ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week9/09주차_실습_접촉응력_헤르츠이론.md)**
+
+### [Week 10] (이후 실습 내용 지속 업데이트 예정)
 - (차주 업데이트...)
 
 ---
@@ -128,7 +157,10 @@
   - `[Week 04]` 농산물 밀도/공극률 산출 및 3D 가상 패킹 구현
   - `[Week 05]` 사과즙 점도 트레이드오프 및 레이놀즈 유동 최적화 4단계 시뮬레이터 개발
   - `[Week 06]` 전분 풀 및 토마토 페이스트의 파워 로우 피팅 및 항복 응력 분석 시뮬레이션 완성
-  - `[Week 07]` (차주 진행 시 업데이트)
+  - `[Week 07]` 점탄성 모델(Maxwell, KV, Burgers) 크리프·응력 이완 시뮬레이션 개발
+  - `[Week 08]` 중간고사 (2~7주차 범위)
+  - `[Week 09]` 헤르츠 접촉 응력 계산기, 3D 압력 분포 시각화, 인터랙티브 시뮬레이터 개발
+  - `[Week 10]` (차주 진행 시 업데이트)
 
 ---
 *과제 제출 완료 후, 본인의 GitHub 저장소 URL(예: `https://github.com/아이디/biomaterial-handling/tree/main/ko/week02`)을 조교/교수에게 제출하여 최종 성적에 반영합니다.*

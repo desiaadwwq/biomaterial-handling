@@ -9,6 +9,9 @@
 - [Week 03: Volume & Surface Area Estimation](#week-03-volume--surface-area-estimation)
 - [Week 04: Density & Porosity Measurement and Visualization](#week-04-density--porosity-measurement-and-visualization)
 - [Week 05: Rheological Properties (Newtonian Fluids)](#week-05-rheological-properties-newtonian-fluids)
+- [Week 06: Complex Behavior of Non-Newtonian Fluids](#week-06-complex-behavior-of-non-newtonian-fluids)
+- [Week 07: Viscoelastic Properties — Creep & Stress Relaxation](#week-07-viscoelastic-properties--creep--stress-relaxation)
+- [Week 09: Contact Stress & Hertz Theory](#week-09-contact-stress--hertz-theory)
 
 ---
 
@@ -506,6 +509,308 @@ During our Python implementation scaling the `scipy.optimize.curve_fit` regressi
 <summary>View Answer</summary>
 
 **Answer: B** — SciPy logically partitions output; `popt` contains the exact targeted array of Optimal Evaluated Parameters solving the target equation, whereas secondary limits yield covariance error matrices (`pcov`).
+</details>
+
+---
+
+# Week 07: Viscoelastic Properties — Creep & Stress Relaxation
+> 🔗 [View Detailed Lab Tutorial](week7/Week07_Lab_Viscoelastic_Properties.md)
+
+## 💡 Discussion Topics
+
+### Discussion 1: Temperature vs. Viscoelastic Parameters
+**Background**: Refrigerated (4°C) vs room temperature (25°C) storage alters apple E and η values.
+> **Prompt**: Analyze the molecular-level causes of relaxation time (τᵣ) reduction as temperature rises, and quantify the effect of cold-chain transport on load-induced deformation mitigation.
+
+### Discussion 2: Ripening-Induced Viscoelastic Degradation
+**Background**: Pectin hydrolysis → cell wall network weakening → sharp E decline and η reduction.
+> **Prompt**: Discuss the feasibility of non-destructive ripeness assessment through viscoelastic monitoring and its integration into real-time sorting systems.
+
+### Discussion 3: Vibration-Accelerated Creep
+**Background**: Repeated vibration loads during truck transport may accelerate deformation beyond static creep predictions.
+> **Prompt**: Discuss the concept of dynamic fatigue and its integration with cushion material design. Propose methods for estimating creep acceleration factors at different vibration frequencies.
+
+### Discussion 4: Limitations of Burgers Model & Fractional Viscoelastic Models
+**Background**: Even the 4-parameter Burgers model cannot perfectly capture the full relaxation time spectrum of real biological materials.
+> **Prompt**: Discuss the physical meaning of fractional calculus-based Scott-Blair models and their potential for improving fitting precision beyond Burgers.
+
+### Discussion 5: Maximum Stacking Height from Creep Data
+**Background**: Predicting 24-hour cumulative creep deformation of the bottom fruit in an n-tier stack of 20 kg apple boxes.
+> **Prompt**: Develop an algorithm to determine whether allowable strain (εₐₗₗₒᵥ ≈ 3%) is exceeded using Burgers parameters, and quantify the stacking tier increase potential with refrigerated transport.
+
+---
+
+## 📝 Quiz Questions
+
+### Q1. [Theory] Definition of Viscoelasticity
+Which statement best describes viscoelasticity?
+| Option | Content |
+| --- | --- |
+| A | Newtonian fluid behavior where shear stress and shear rate are proportional |
+| **B** | **Combined elastic (instant recovery) and viscous (permanent deformation) response occurring simultaneously over time** |
+| C | Pure thermodynamic property dependent only on temperature |
+| D | Shear-thinning behavior where viscosity decreases with shear rate |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Viscoelasticity is the intermediate behavior where partial recovery and permanent deformation coexist depending on the time scale.
+</details>
+
+### Q2. [Theory] Maxwell Model Strength
+What viscoelastic phenomenon does the Maxwell model (spring + dashpot in series) describe best?
+| Option | Content |
+| --- | --- |
+| **A** | **Stress Relaxation — exponential stress decay under constant strain** |
+| B | Creep — saturating strain increase under constant stress |
+| C | Dynamic viscoelasticity — storage and loss moduli separation |
+| D | Flow behavior beyond yield stress |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: A** — The series dashpot precisely implements exponential decay: σ(t) = σ₀·exp(-t/τᵣ).
+</details>
+
+### Q3. [Theory] Burgers Creep 3-Component Decomposition
+In the Burgers creep equation, what does the third term (σ₀/η₁)·t represent?
+| Option | Content |
+| --- | --- |
+| A | Instantaneous elastic deformation — spring response at load application |
+| B | Delayed elastic deformation — time-dependent saturation of KV unit |
+| **C** | **Viscous flow — irreversible linear increase from dashpot (permanent deformation)** |
+| D | Elastic recovery — immediate recovery upon load removal |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — The Maxwell dashpot (η₁) pure viscous flow component, linearly proportional to time and permanently retained after load removal.
+</details>
+
+### Q4. [Theory] Physical Meaning of Relaxation Time (τᵣ)
+Which statement correctly describes relaxation time τᵣ = η/E in the Maxwell model?
+| Option | Content |
+| --- | --- |
+| A | Time for stress to decrease to 50% of initial value |
+| **B** | **Time for stress to decrease to 1/e (~36.8%) of initial value** |
+| C | Time for strain to reach maximum |
+| D | Time for creep curve to enter the linear region |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Exponential decay e⁻¹ ≈ 0.368, so relaxation time marks ~36.8% of initial stress.
+</details>
+
+### Q5. [Theory] Kelvin-Voigt Model Limitation
+What is the most significant limitation of the Kelvin-Voigt model (spring + dashpot in parallel)?
+| Option | Content |
+| --- | --- |
+| A | Cannot describe creep |
+| B | Cannot predict complete recovery after creep |
+| **C** | **Cannot express instantaneous elastic deformation (σ₀/E), and cannot describe stress relaxation** |
+| D | Requires 4+ parameters making fitting impossible |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — Parallel structure starts at strain 0 at t=0 (no instant elasticity), and stress relaxation reaches equilibrium instantly (no decay).
+</details>
+
+### Q6. [Python] Burgers Fitting Function
+Which `scipy` function is used to estimate Burgers 4-parameter values via inverse regression?
+| Option | Content |
+| --- | --- |
+| A | `scipy.integrate.simpson` |
+| **B** | **`scipy.optimize.curve_fit`** |
+| C | `scipy.interpolate.CubicSpline` |
+| D | `scipy.stats.linregress` |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Nonlinear least squares method to inversely estimate optimal parameters of a user-defined function.
+</details>
+
+### Q7. [Python] UI Widgets
+Which Matplotlib widgets are used for model switching and parameter adjustment in Step 3?
+| Option | Content |
+| --- | --- |
+| A | `matplotlib.animation.FuncAnimation` |
+| B | `matplotlib.patches.FancyBboxPatch` |
+| **C** | **`matplotlib.widgets.Slider` and `matplotlib.widgets.RadioButtons`** |
+| D | `matplotlib.colors.Normalize` |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — Sliders for continuous parameter adjustment, radio buttons for discrete model switching.
+</details>
+
+### Q8. [Theory] Permanent Deformation Parameter
+In a Burgers creep-recovery test, which parameter determines the permanent deformation remaining after load removal?
+| Option | Content |
+| --- | --- |
+| A | E₁ (instantaneous elastic modulus) |
+| B | E₂ (delayed elastic modulus) |
+| **C** | **η₁ (Maxwell dashpot viscosity) — (σ₀/η₁)·t_load** |
+| D | η₂ (KV dashpot viscosity) |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — Only the Maxwell dashpot's viscous flow component is irreversible; smaller η₁ means greater permanent deformation.
+</details>
+
+---
+
+# Week 09: Contact Stress & Hertz Theory
+> 🔗 [View Detailed Lab Tutorial](week9/Week09_Lab_Contact_Stress_Hertz.md)
+
+## 💡 Discussion Topics
+
+### Discussion 1: Temperature & Mechanical Properties
+**Background**: Cell turgor pressure decreases at high temperature → E reduction → contact area expansion under same load.
+> **Prompt**: Compare Hertz contact stress at refrigerated (4°C) vs room temperature (25°C) and discuss how cold-chain maintenance affects bruise prevention.
+
+### Discussion 2: Selecting Roller Materials for Sorting Lines
+**Background**: Steel rollers (E~200 GPa) vs silicone rubber (E~5 MPa) produce vastly different contact stresses at sorting line throughputs.
+> **Prompt**: Analyze the trade-off between roller material stiffness and fruit damage rate, and propose optimal E* ranges for different fruit categories.
+
+### Discussion 3: Multi-Contact Loading
+**Background**: Fruits in bulk storage experience simultaneous contact from multiple adjacent fruits, not single-point Hertz contact.
+> **Prompt**: Discuss superposition approaches and limitations when extending single-contact Hertz theory to multi-contact bulk storage scenarios.
+
+### Discussion 4: Dynamic Impact vs Static Hertz
+**Background**: Drop impact generates transient stress exceeding static Hertz predictions due to inertial effects.
+> **Prompt**: Compare static Hertz contact stress with dynamic impact analysis, and discuss why allowable drop height calculations require correction factors.
+
+### Discussion 5: Robotic Gripper Force Optimization
+**Background**: Harvesting robots must apply sufficient grip force without bruising fruit.
+> **Prompt**: Using Hertz theory, derive the maximum safe gripping force for a spherical fruit-gripper system and discuss sensor-based real-time force control strategies.
+
+---
+
+## 📝 Quiz Questions
+
+### Q1. [Theory] Hertz Contact Radius Formula
+In sphere-plate contact, what is the contact radius given by?
+| Option | Content |
+| --- | --- |
+| A | a = F / (π·E*) |
+| **B** | **a = (3FR / 4E*)^(1/3)** |
+| C | a = (F·R) / E* |
+| D | a = √(F / E*) |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Hertz theory derives a = (3FR/4E*)^(1/3), where R is the effective radius and E* is the combined modulus.
+</details>
+
+### Q2. [Theory] Maximum Contact Stress Location
+Where does the maximum compressive stress occur in Hertz contact?
+| Option | Content |
+| --- | --- |
+| **A** | **At the center of the contact area (r=0, z=0)** |
+| B | At the edge of the contact circle |
+| C | At depth z = 0.48a below the surface |
+| D | Uniformly distributed across the contact area |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: A** — p_max = (3F)/(2πa²) occurs at the contact center. The subsurface maximum shear stress at z≈0.48a is a separate phenomenon.
+</details>
+
+### Q3. [Theory] Subsurface Shear Stress & Bruising
+At what approximate depth below the contact surface does the maximum shear stress occur (the primary bruise initiation site)?
+| Option | Content |
+| --- | --- |
+| A | At the surface (z = 0) |
+| B | z ≈ 0.1a |
+| **C** | **z ≈ 0.48a** |
+| D | z ≈ 2a |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — τ_max ≈ 0.31·p_max occurs at z ≈ 0.48a below the surface, explaining why bruises initiate internally.
+</details>
+
+### Q4. [Theory] Combined Elastic Modulus E*
+The combined elastic modulus E* accounts for:
+| Option | Content |
+| --- | --- |
+| A | Only the fruit's elastic modulus |
+| **B** | **Both contacting bodies' elastic moduli and Poisson's ratios** |
+| C | Only the contact surface's hardness |
+| D | Temperature-dependent viscosity |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — 1/E* = (1-ν₁²)/E₁ + (1-ν₂²)/E₂, combining properties of both contacting materials.
+</details>
+
+### Q5. [Theory] Pressure Distribution Shape
+What is the shape of the Hertz contact pressure distribution?
+| Option | Content |
+| --- | --- |
+| A | Uniform rectangular |
+| B | Linear triangular |
+| **C** | **Semi-elliptical (hemispheroid)** |
+| D | Gaussian bell curve |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: C** — p(r) = p_max·√(1 - r²/a²), a semi-elliptical profile with maximum at center and zero at contact edge.
+</details>
+
+### Q6. [Python] 3D Pressure Visualization
+Which matplotlib function creates the 3D surface plot of the pressure distribution?
+| Option | Content |
+| --- | --- |
+| A | `plt.contourf()` |
+| **B** | **`ax.plot_surface()`** |
+| C | `plt.scatter()` |
+| D | `plt.bar3d()` |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — `Axes3D.plot_surface()` renders the semi-elliptical pressure as a continuous 3D surface with color mapping.
+</details>
+
+### Q7. [Theory] Effect of Roller Material on Contact Stress
+Replacing a steel roller (E=200 GPa) with silicone rubber (E=5 MPa) on a sorting line results in:
+| Option | Content |
+| --- | --- |
+| A | Smaller contact area and higher maximum stress |
+| **B** | **Much larger contact area and drastically lower maximum stress** |
+| C | No change in contact stress |
+| D | Higher contact stress due to increased friction |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Softer contact surface → lower E* → larger contact radius a → stress distributed over wider area → significantly reduced p_max.
+</details>
+
+### Q8. [Python] Interactive Simulator Widgets
+In Step 3's interactive Hertz simulator, which widgets enable real-time parameter exploration?
+| Option | Content |
+| --- | --- |
+| A | `matplotlib.animation.FuncAnimation` |
+| **B** | **`matplotlib.widgets.Slider` and `matplotlib.widgets.RadioButtons`** |
+| C | `matplotlib.patches.Circle` |
+| D | `matplotlib.colorbar.Colorbar` |
+
+<details>
+<summary>View Answer</summary>
+
+**Answer: B** — Sliders adjust force, radius, and elastic modulus; radio buttons switch between contact surface materials.
 </details>
 
 ---

@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import math
 
-# Carry over from step1 and step2 results
-image_path = 'apple_side_A.png'
+# 앞선 step1, step2 결과 이어받기 가정
+image_path = 'images/apple_side_A.png'
 img_array = np.fromfile(image_path, np.uint8)
 img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 original_display = img.copy()
@@ -22,10 +22,10 @@ for cnt in contours:
     if perimeter == 0:
         continue
         
-    # A. Circularity calculation
+    # A. 원형도 (Circularity) 산출
     circularity = (4 * math.pi * area) / (perimeter ** 2)
     
-    # B. Sphericity estimation (indirect 2D Bounding Box dimensions)
+    # B. 구형도용 (간접 2D Bounding Box 치수 기반)
     rect = cv2.minAreaRect(cnt)
     box = cv2.boxPoints(rect)
     box = np.int32(box)
@@ -38,7 +38,7 @@ for cnt in contours:
     GMD = (pixel_L * pixel_W * pixel_T) ** (1/3)
     sphericity = (GMD / pixel_L) * 100
     
-    # Visualization: draw contour and bounding box
+    # 화면 표출 텍스트
     cv2.drawContours(original_display, [cnt], -1, (0, 255, 0), 2)
     cv2.drawContours(original_display, [box], 0, (255, 0, 0), 2)
     

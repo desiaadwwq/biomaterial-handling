@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # step1 작업 결과 이어받기 가정
-image_path = 'apple_side_A.png'
+image_path = 'images/apple_side_A.png'
 img_array = np.fromfile(image_path, np.uint8)
 img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 original_display = img.copy()
