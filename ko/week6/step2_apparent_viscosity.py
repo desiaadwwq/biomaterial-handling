@@ -7,6 +7,9 @@ Step 2: Apparent Viscosity Dynamics Simulation
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 from matplotlib.widgets import Slider
 
 # 1. 초기 파라미터 설정 및 배열 생성
@@ -24,7 +27,8 @@ app_viscosity = calc_apparent_viscosity(initial_K, initial_n, shear_rate)
 
 # 2. 그래프 및 UI 레이아웃 설정
 fig, ax = plt.subplots(figsize=(10, 7))
-plt.subplots_adjust(bottom=0.25)  # 슬라이더 공간 확보
+plt.subplots_adjust(bottom=0.25, top=0.9)
+fig.tight_layout(rect=[0, 0.25, 1, 1])  # 슬라이더 공간 확보
 
 # 그래프 플롯팅
 line, = ax.plot(shear_rate, app_viscosity, color='purple', lw=3)

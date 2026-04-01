@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # 1. 영상 로드 (한글 경로 지원을 위해 imdecode 사용 권장)
-image_path = 'apple_side_A.png'
+image_path = 'images/apple_side_A.png'
 img_array = np.fromfile(image_path, np.uint8)
 img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 

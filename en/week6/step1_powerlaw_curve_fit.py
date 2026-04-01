@@ -7,6 +7,10 @@ It models hypothetical Shear Rate and Shear Stress data utilizing scipy.optimize
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 from scipy.optimize import curve_fit
 
 # 1. Hypothetical Experimental Data Array (Assuming Pseudoplastic Starch Paste)

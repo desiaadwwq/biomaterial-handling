@@ -7,6 +7,10 @@ optimizing predictive tolerances via scrolling UI markers.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 from matplotlib.widgets import Slider
 
 # 1. Base Variables Initialization

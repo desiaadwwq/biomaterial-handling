@@ -8,6 +8,9 @@ scipy.optimize.curve_fit을 이용해 산출하는 기본 알고리즘입니다.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 from scipy.optimize import curve_fit
 
 # 1. 가상의 실험 데이터 보간 (전분 풀 - Pseudoplastic 유체 가정)

@@ -18,8 +18,8 @@
 
 ### [Week 02] 기하학적 형태 지표(원형도, 구형도) 분석 알고리즘 구현
 디지털 이미지 프로세싱 기초 기법들을 익히고, 영상을 활용해 사과 표본의 핵심 물리적 특성인 **원형도(Circularity)와 구형도(Sphericity)**를 산출합니다.
-- **[A군] 정상 사과 데이터 ([`apple_side_A.png`](week2/apple_side_A.png), [`apple_top_A.png`](week2/apple_top_A.png))**: 둥글고 대칭에 가까운 정상 표본
-- **[B군] 10% 왜곡 사과 데이터 ([`apple_side_B.png`](week2/apple_side_B.png), [`apple_top_B.png`](week2/apple_top_B.png))**: 한쪽 축이 일그러진 비대칭 표본
+- **[A군] 정상 사과 데이터 ([`apple_side_A.png`](week2/images/apple_side_A.png), [`apple_top_A.png`](week2/images/apple_top_A.png))**: 둥글고 대칭에 가까운 정상 표본
+- **[B군] 10% 왜곡 사과 데이터 ([`apple_side_B.png`](week2/images/apple_side_B.png), [`apple_top_B.png`](week2/images/apple_top_B.png))**: 한쪽 축이 일그러진 비대칭 표본
 - **주요 학습 스크립트**:
   - [`step1_preprocess.py`](week2/step1_preprocess.py): 이미지 로딩 및 그레이스케일, 블러 노이즈 제거 전처리
   - [`step2_contour.py`](week2/step2_contour.py): Otsu 알고리즘 이진화 및 객체 윤곽선(Contour) 분리

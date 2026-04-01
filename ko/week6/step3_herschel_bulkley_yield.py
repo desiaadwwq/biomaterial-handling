@@ -6,6 +6,9 @@ Step 3: Herschel-Bulkley Yield Stress Analysis
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 from matplotlib.widgets import Slider
 
 # 1. 초기 변수
@@ -28,7 +31,7 @@ initial_stress = herschel_bulkley(shear_rate, initial_tau_y, initial_K, initial_
 
 # 2. 메인 플롯 설정
 fig, ax = plt.subplots(figsize=(10, 7))
-plt.subplots_adjust(bottom=0.3)
+plt.subplots_adjust(bottom=0.3, top=0.9)
 
 line, = ax.plot(shear_rate, initial_stress, color='darkorange', lw=3, label='Herschel-Bulkley Model')
 ax.set_title('Bingham Plastic / Yield-Stress Fluid Behavior', fontsize=14, fontweight='bold')
@@ -58,7 +61,7 @@ def update(val):
     new_stress = herschel_bulkley(shear_rate, c_tau_y, initial_K, c_n)
     
     line.set_ydata(new_stress)
-    hline.set_ydata(c_tau_y)
+    hline.set_ydata([c_tau_y, c_tau_y])
     hline.set_label(f'Yield Stress = {c_tau_y:.1f} Pa')
     
     ax.legend(loc='upper left')
