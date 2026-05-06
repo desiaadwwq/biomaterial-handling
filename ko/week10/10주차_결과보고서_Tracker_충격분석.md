@@ -1,17 +1,19 @@
-# 10주차 실습 결과보고서: 사과(Apple) 가상 낙하 실험 및 Tracker 충격 분석
+# 10주차 실습 결과보고서: 사과(Apple) 가상 낙하 시뮬레이션 및 충격 분석
 
-## 🔬 가상 실험 환경 (Virtual Experiment Setup)
-본 보고서는 실제 사과(Fuji Apple)를 1.0m 높이에서 자유 낙하 시킨 후 고속 카메라(240fps)로 촬영하여 Tracker 비디오 분석 소프트웨어로 궤적을 추적했다는 **가정 하에 시뮬레이션된 가상 데이터를 바탕으로 작성**되었습니다.
+## 🔬 가상 실험 재현 (Virtual Experiment Reproduction)
+본 보고서는 장소 및 장비의 제약으로 인해 실제 사과(Fuji Apple)를 고속 카메라로 촬영하고 Tracker로 분석하는 오프라인 실습을 진행하기 어려운 환경을 고려하여, **파이썬(Python) 기반의 물리 시뮬레이션 코드(`step1_impact_analysis.py`)를 통해 낙하 실험을 가상으로 재현**한 결과를 바탕으로 작성되었습니다.
+
+실제 Tracker 환경과 동일한 역학적 데이터를 산출하기 위해, 다음과 같은 매개변수(Parameters)를 가상 환경에 세팅하였습니다:
 - **실험 대상**: 사과 (질량 $m = 0.25\text{kg}$)
-- **낙하 높이**: $1.0\text{m}$ (초기 속도 $0\text{m/s}$에서 자유 낙하)
+- **낙하 높이**: $1.0\text{m}$ (초기 속도 $0\text{m/s}$에서 자유 낙하, 중력가속도 $9.81\text{m/s}^2$)
 - **충돌 표면 조건**: 맨바닥(Hard Surface) vs 완충재 적용(Soft Surface)
 - **손상 임계치**: 최대 충격력 $150\text{N}$ 초과 시 사과 내부 조직 파괴(멍, Bruise) 발생으로 간주
 
 ---
 
-## 1. Tracker 기반 사과 낙하 궤적 분석 그래프
+## 1. 파이썬 시뮬레이션 기반 낙하 궤적 분석 그래프
 
-가상의 스마트폰 고속 촬영 및 Tracker 추적을 통해 추출한 속도 데이터를 기반으로 시뮬레이션한 사과의 **위치-시간(Position-Time)** 및 **가속도-시간(Acceleration-Time)** 궤적 그래프입니다.
+Tracker 소프트웨어가 추출하는 속도 데이터를 수학적으로 모델링하여, 가상 환경에서 자유 낙하하는 사과의 **위치-시간(Position-Time)** 및 **가속도-시간(Acceleration-Time)** 궤적을 Python `matplotlib`을 이용해 도출해 낸 그래프입니다.
 
 ### 1.1 위치-시간 (Position-Time) 그래프
 ![위치-시간 그래프](file:///c:/Users/sin12/Desktop/Bioresource%20processing%20engineering/biomaterial-handling-main/ko/week10/images/tracker_position_time.png)
