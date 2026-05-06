@@ -33,6 +33,20 @@
 
 ---
 
+```mermaid
+flowchart LR
+    A[("Texture Analyzer<br>Time-Series Data")] -->|"Stress Relaxation<br>Simulation"| B(("Step 1<br>Maxwell<br>Stress Relaxation"))
+    B -->|"τ_r Parameters"| C{{"Step 2<br>Burgers Creep<br>Curve Fitting"}}
+    C -->|"E₁, E₂, η₁, η₂ Inverse"| D(["Step 3<br>Interactive<br>Viscoelastic Simulator"])
+    
+    style A fill:#f9f0c2,stroke:#d4b106,stroke-width:2px,color:#000
+    style B fill:#d0e8f2,stroke:#0f83a0,stroke-width:2px,color:#000
+    style C fill:#fce4d6,stroke:#d9703a,stroke-width:2px,color:#000
+    style D fill:#d4ecd9,stroke:#3bb143,stroke-width:2px,color:#000
+```
+
+---
+
 ## 1. Theoretical Background
 
 ### 1-1. Viscoelasticity

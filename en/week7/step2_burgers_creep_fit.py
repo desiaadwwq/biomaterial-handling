@@ -1,8 +1,8 @@
 """
-[Step 2] Burgers 크리프 모델 곡선 피팅 (Burgers Creep Model Curve Fitting)
-- 7주차 실습: 점탄성 특성 — 크리프와 응력 이완
-- curve_fit 기반 4-파라미터(E_1, E_2, η_1, η_2) 비선형 역산
-- 크리프 3단계 분해(즉시 탄성 + 지연 탄성 + 점성 유동) 시각화
+[Step 2] Burgers Creep Model Curve Fitting
+- Week 7 Lab: Viscoelastic Properties — Creep & Stress Relaxation
+- 4-parameter (E₁, E₂, η₁, η₂) non-linear inverse estimation based on curve_fit
+- Visualization of 3-stage creep decomposition (Instant Elastic + Delayed Elastic + Viscous Flow)
 """
 
 import numpy as np
@@ -63,9 +63,15 @@ print(f"  {'E_2':12} {E2_fit:12.2f} {'kPa':>12} {perr[1]:12.3f}")
 print(f"  {'η_1':12} {eta1_fit:12.2f} {'kPa·s':>12} {perr[2]:12.3f}")
 print(f"  {'η_2':12} {eta2_fit:12.2f} {'kPa·s':>12} {perr[3]:12.3f}")
 print("-" * 50)
-print(f"  지연 시간 τ_c = η_2/E_2 = {eta2_fit/E2_fit:.2f} s")
+print(f"  Delayed Time τ_c = η_2/E_2 = {eta2_fit/E2_fit:.2f} s")
 print(f"  R² = {r_squared:.6f}")
-print(f"  판정: {'O 우수 피팅' if r_squared > 0.99 else '! 추가 검토 필요'}")
+# 💡 Assessment Criteria & Troubleshooting Guide:
+# - ✅ Excellent Fit (R² > 0.99): The model describes the experimental data very accurately.
+# - ⚠️ Additional Review Required (R² <= 0.99): Please check the following:
+#   1) Verify if the initial guesses (p0) are within a reasonable physical range (200, 100, 5000, 500).
+#   2) Check for noise or outliers in the experimental data.
+#   3) Evaluate if the sample material's behavior is suitable for the Burgers 4-element model.
+print(f"  Assessment: {'✅ Excellent Fit' if r_squared > 0.99 else '⚠️ Additional Review Required'}")
 
 # ============================================================
 # 4. 시각화 — 피팅 곡선 + 3단계 분해

@@ -45,8 +45,50 @@ Understand the concepts of **True Density, Bulk Density, and Porosity**—key ph
   - [`step3_random_packing.py`](week4/step3_random_packing.py): (**New**) A 3D simulation comparing Ordered array packing vs Random Monte-Carlo packing algorithms to empirically demonstrate the reduction in bulk density.
 - ➡️ **[View Detailed Lab Tutorial for This Week](week4/Week04_Lab_Density_Porosity.md)**
 
-### [Week 05] (To be updated in upcoming weeks)
-- (Next week update...)
+### [Week 05] Rheological Properties Analysis & Transport Optimization Simulation
+Investigate the trade-off relationship between viscosity friction resistance (Pressure Drop), pumping power cost, and heating energy for heat exchange during pipeline transport using the Arrhenius model and Hagen-Poiseuille equation.
+- **Sample Specimens**: Clear Apple Concentrate Juice Data
+- **Key Learning Scripts**:
+  - [`step1_viscosity_optimization.py`](week5/step1_viscosity_optimization.py): Static visualization of Newtonian fluid viscosity-temperature inverse model and finding the lowest total cost intersection.
+  - [`step2_interactive_simulation.py`](week5/step2_interactive_simulation.py): Real-time parameter (velocity, inner diameter, unit price) manipulation responding with an optimal temperature U-curve animation (Slider UI).
+  - [`step3_pipe_diameter_simulation.py`](week5/step3_pipe_diameter_simulation.py): Cross-margin derivation between pumping cost reduction vs. basic facility unit price surge upon pipe diameter expansion.
+  - [`step4_reynolds_simulation.py`](week5/step4_reynolds_simulation.py): Laminar/turbulent state transition and mixing forced vortex dynamic particle animation according to Reynolds number increase.
+- ➡️ **[View Detailed Lab Tutorial for This Week](week5/Week05_Lab_Rheology.md)**
+
+### [Week 06] Complex Non-Newtonian Behavior & Flow Model Fitting
+Fit non-Newtonian behavior (shear thinning, thickening, Bingham plastic) to Power Law and Herschel-Bulkley models, and implement an apparent viscosity/yield stress simulator.
+- **Key Learning Scripts**:
+  - [`step1_powerlaw_curve_fit.py`](week6/step1_powerlaw_curve_fit.py): Power Law fitting inverse calculation
+  - [`step2_apparent_viscosity.py`](week6/step2_apparent_viscosity.py): Apparent viscosity slider simulator
+  - [`step3_herschel_bulkley_yield.py`](week6/step3_herschel_bulkley_yield.py): Herschel-Bulkley yield stress analysis
+- ➡️ **[View Detailed Lab Tutorial for This Week](week6/Week06_Lab_Non_Newtonian_Fluids.md)**
+
+### [Week 07] Viscoelastic Properties — Creep & Stress Relaxation
+Simulation of creep and stress relaxation for viscoelastic models (Maxwell, Kelvin-Voigt, Burgers) and practical training on 4-parameter inverse fitting.
+- **Sample Specimen**: Apple (Fuji) texture analyzer stress relaxation and creep data
+- **Key Learning Scripts**:
+  - [`step1_maxwell_relaxation.py`](week7/step1_maxwell_relaxation.py): Maxwell stress relaxation simulation (comparison of 3 η values)
+  - [`step2_burgers_creep_fit.py`](week7/step2_burgers_creep_fit.py): Burgers 4-parameter creep curve fitting
+  - [`step3_viscoelastic_simulator.py`](week7/step3_viscoelastic_simulator.py): Interactive viscoelastic simulator (model switching + dual plot)
+- ➡️ **[View Detailed Lab Tutorial for This Week](week7/Week07_Lab_Viscoelastic_Properties.md)**
+
+### [Week 08] Midterm Exam
+- Comprehensive evaluation covering Weeks 1–7.
+
+### [Week 09] Contact Stress & Hertz Theory — Mechanical Properties I
+Analyze contact radius, maximum stress, and pressure distribution of curved biomaterials based on Hertz Contact Theory using Python, and perform roller material optimization simulation for a sorter.
+- **Sample Specimen**: Apple (Fuji) texture analyzer compression data
+- **Key Learning Scripts**:
+  - [`step1_hertz_calculator.py`](week9/step1_hertz_calculator.py): Hertz contact stress calculator (comparison of 4 contact material types)
+  - [`step2_pressure_distribution.py`](week9/step2_pressure_distribution.py): 3D visualization of contact pressure distribution + stress profile by depth
+  - [`step3_hertz_contact_simulator.py`](week9/step3_hertz_contact_simulator.py): Interactive contact simulator (sliders + radio buttons)
+- ➡️ **[View Detailed Lab Tutorial for This Week](week9/Week09_Lab_Contact_Stress_Hertz.md)**
+
+### [Week 10] Impact Characteristics & Damage Prediction Modeling — Mechanical Properties II
+Track the dropping impact behavior of biomaterials using Tracker video analysis software, and utilize Python to calculate the coefficient of restitution and simulate whether the critical damage energy (Bio-yield) is exceeded.
+- **Key Learning Scripts**:
+  - [`step1_impact_analysis.py`](week10/step1_impact_analysis.py): Calculation of restitution coefficient and peak impact force based on drop height and collision duration, alongside damage prediction.
+- ➡️ **[View Detailed Lab Tutorial for This Week](week10/Week10_Lab_Impact_Damage_Prediction.md)**
 
 
 ---
@@ -117,7 +159,12 @@ Update the `README.md` file in the top-level folder each week to build your port
   - `[Week 02]` Completed apple contour recognition and circularity/sphericity calculation scripts
   - `[Week 03]` Performed avocado volume/surface area estimation via numerical integration
   - `[Week 04]` Calculated density/porosity and implemented 3D virtual packing
-  - `[Week 05]` (To be updated next week)
+  - `[Week 05]` Developed a 4-step simulator for apple juice viscosity trade-offs and Reynolds flow optimization.
+  - `[Week 06]` Completed power law fitting and yield stress analysis simulation for starch paste and tomato paste.
+  - `[Week 07]` Developed creep/stress relaxation simulations for viscoelastic models (Maxwell, KV, Burgers).
+  - `[Week 08]` Midterm Exam (Coverage: Week 1–7).
+  - `[Week 09]` Developed Hertz contact stress calculator, 3D pressure distribution visualization, and interactive simulator.
+  - `[Week 10]` Implemented drop impact analysis script for restitution coefficient and damage prediction using Tracker physics data.
 
 ---
 *After completing your assignment, submit your GitHub repository URL (e.g., `https://github.com/your-username/biomaterial-handling/tree/main/en/week02`) to your TA/professor for final grading.*
