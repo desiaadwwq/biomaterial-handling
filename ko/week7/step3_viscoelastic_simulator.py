@@ -72,14 +72,14 @@ relax_data = burgers_relaxation(t, E1_init, E2_init, eta1_init, eta2_init)
 
 line_creep, = ax_creep.plot(t, creep_data, "b-", linewidth=2)
 ax_creep.set_xlabel("Time (s)", fontsize=11)
-ax_creep.set_ylabel("Strain $\epsilon$ (%)", fontsize=11)
-ax_creep.set_title("Creep Curve ($\sigma_0$ = 10 kPa)", fontsize=12)
+ax_creep.set_ylabel(r"Strain $\epsilon$ (%)", fontsize=11)
+ax_creep.set_title(r"Creep Curve ($\sigma_0$ = 10 kPa)", fontsize=12)
 ax_creep.grid(True, alpha=0.3)
 
 line_relax, = ax_relax.plot(t, relax_data, "r-", linewidth=2)
 ax_relax.set_xlabel("Time (s)", fontsize=11)
-ax_relax.set_ylabel("Stress $\sigma(t)$ (kPa)", fontsize=11)
-ax_relax.set_title("Stress Relaxation ($\epsilon_0$ = 5%)", fontsize=12)
+ax_relax.set_ylabel(r"Stress $\sigma(t)$ (kPa)", fontsize=11)
+ax_relax.set_title(r"Stress Relaxation ($\epsilon_0$ = 5%)", fontsize=12)
 ax_relax.grid(True, alpha=0.3)
 
 # 정보 박스
@@ -109,8 +109,8 @@ ax_eta2 = fig.add_axes([0.08, 0.04, 0.55, 0.03])
 
 slider_E1 = Slider(ax_E1, "$E_1$ (kPa)", 50, 500, valinit=E1_init, valstep=10)
 slider_E2 = Slider(ax_E2, "$E_2$ (kPa)", 30, 300, valinit=E2_init, valstep=10)
-slider_eta1 = Slider(ax_eta1, "$\eta_1$ (kPa·s)", 500, 10000, valinit=eta1_init, valstep=100)
-slider_eta2 = Slider(ax_eta2, "$\eta_2$ (kPa·s)", 100, 2000, valinit=eta2_init, valstep=50)
+slider_eta1 = Slider(ax_eta1, r"$\eta_1$ (kPa·s)", 500, 10000, valinit=eta1_init, valstep=100)
+slider_eta2 = Slider(ax_eta2, r"$\eta_2$ (kPa·s)", 100, 2000, valinit=eta2_init, valstep=50)
 
 # ============================================================
 # 5. 라디오 버튼 (모델 선택)

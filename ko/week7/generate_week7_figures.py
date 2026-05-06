@@ -14,13 +14,13 @@ t = np.linspace(0, 10, 500)
 # Stress input
 stress = np.where((t >= 1) & (t <= 5), 1, 0)
 ax1.plot(t, stress, color='#e74c3c', lw=2.5)
-ax1.set_ylabel('Stress ($\sigma$)', fontsize=11, fontweight='bold')
+ax1.set_ylabel(r'Stress ($\sigma$)', fontsize=11, fontweight='bold')
 ax1.set_title('1. Step Stress Input (Load applied at t=1, removed at t=5)', fontsize=12, fontweight='bold')
 
 # Elastic response
 elastic = np.where((t >= 1) & (t <= 5), 1, 0)
 ax2.plot(t, elastic, color='#3498db', lw=2.5)
-ax2.set_ylabel('Strain ($\epsilon$)', fontsize=11, fontweight='bold')
+ax2.set_ylabel(r'Strain ($\epsilon$)', fontsize=11, fontweight='bold')
 ax2.set_title('2. Elastic Response (Ideal Solid - Instantaneous)', fontsize=12, fontweight='bold')
 
 # Viscous response
@@ -28,7 +28,7 @@ viscous = np.zeros_like(t)
 for i in range(1, len(t)):
     viscous[i] = viscous[i-1] + (1 if 1 <= t[i] <= 5 else 0) * 0.02
 ax3.plot(t, viscous, color='#9b59b6', lw=2.5)
-ax3.set_ylabel('Strain ($\epsilon$)', fontsize=11, fontweight='bold')
+ax3.set_ylabel(r'Strain ($\epsilon$)', fontsize=11, fontweight='bold')
 ax3.set_title('3. Viscous Response (Ideal Fluid - Permanent Deformation)', fontsize=12, fontweight='bold')
 
 # Viscoelastic response
@@ -41,7 +41,7 @@ for i, time in enumerate(t):
     else:
         viscoel[i] = 0.05 * 4 + 0.4 * (1 - np.exp(-4 / 0.8)) * np.exp(-(time - 5) / 0.8)
 ax4.plot(t, viscoel, color='#2ecc71', lw=2.5)
-ax4.set_ylabel('Strain ($\epsilon$)', fontsize=11, fontweight='bold')
+ax4.set_ylabel(r'Strain ($\epsilon$)', fontsize=11, fontweight='bold')
 ax4.set_title('4. Viscoelastic Response (Combined elastic + viscous)', fontsize=12, fontweight='bold')
 ax4.set_xlabel('Time (t)', fontsize=11, fontweight='bold')
 
@@ -56,16 +56,16 @@ t = np.linspace(0, 10, 200)
 # Creep
 creep = 1 - np.exp(-t/2) + 0.1*t
 ax1.plot(t, creep, color='#2980b9', lw=3)
-ax1.set_title('Creep Curve (Constant Stress $\sigma_0$)', fontsize=14, fontweight='bold')
+ax1.set_title(r'Creep Curve (Constant Stress $\sigma_0$)', fontsize=14, fontweight='bold')
 ax1.set_xlabel('Time (t)', fontsize=12)
-ax1.set_ylabel('Strain ($\epsilon$)', fontsize=12)
+ax1.set_ylabel(r'Strain ($\epsilon$)', fontsize=12)
 
 # Relaxation
 relax = 0.2 + 0.8 * np.exp(-t/1.5)
 ax2.plot(t, relax, color='#c0392b', lw=3)
-ax2.set_title('Stress Relaxation Curve (Constant Strain $\epsilon_0$)', fontsize=14, fontweight='bold')
+ax2.set_title(r'Stress Relaxation Curve (Constant Strain $\epsilon_0$)', fontsize=14, fontweight='bold')
 ax2.set_xlabel('Time (t)', fontsize=12)
-ax2.set_ylabel('Stress ($\sigma$)', fontsize=12)
+ax2.set_ylabel(r'Stress ($\sigma$)', fontsize=12)
 
 plt.tight_layout()
 plt.savefig(f'{save_dir}/creep_relaxation_curves.png', dpi=300)
@@ -79,14 +79,14 @@ t = np.linspace(0, 10, 200)
 ax1.plot(t, np.exp(-t/2), color='#c0392b', lw=3)
 ax1.set_title('Maxwell: Stress Relaxation (Realistic)', fontsize=14, fontweight='bold')
 ax1.set_xlabel('Time (t)', fontsize=12)
-ax1.set_ylabel('Stress ($\sigma$)', fontsize=12)
+ax1.set_ylabel(r'Stress ($\sigma$)', fontsize=12)
 ax1.axhline(0, color='black', lw=1)
 
 # Creep
 ax2.plot(t, 1 + 0.2*t, color='#2980b9', lw=3)
 ax2.set_title('Maxwell: Creep (Unrealistic linear trend)', fontsize=14, fontweight='bold')
 ax2.set_xlabel('Time (t)', fontsize=12)
-ax2.set_ylabel('Strain ($\epsilon$)', fontsize=12)
+ax2.set_ylabel(r'Strain ($\epsilon$)', fontsize=12)
 
 plt.tight_layout()
 plt.savefig(f'{save_dir}/maxwell_model_curves.png', dpi=300)
@@ -98,7 +98,7 @@ t = np.linspace(0, 10, 200)
 ax.plot(t, 1 - np.exp(-t/2), color='#27ae60', lw=3)
 ax.set_title('Kelvin-Voigt: Creep (Saturation curve)', fontsize=14, fontweight='bold')
 ax.set_xlabel('Time (t)', fontsize=12)
-ax.set_ylabel('Strain ($\epsilon$)', fontsize=12)
+ax.set_ylabel(r'Strain ($\epsilon$)', fontsize=12)
 
 plt.tight_layout()
 plt.savefig(f'{save_dir}/kelvin_voigt_model_curves.png', dpi=300)
@@ -114,12 +114,12 @@ total = instant + delayed + viscous
 
 ax.plot(t, total, 'k-', lw=3, label='Total Strain')
 ax.fill_between(t, 0, instant, color='#3498db', alpha=0.4, label='Immediate Elastic ($E_1$)')
-ax.fill_between(t, instant, instant+delayed, color='#2ecc71', alpha=0.4, label='Delayed Elastic ($E_2, \eta_2$)')
-ax.fill_between(t, instant+delayed, total, color='#9b59b6', alpha=0.4, label='Viscous Flow ($\eta_1$)')
+ax.fill_between(t, instant, instant+delayed, color='#2ecc71', alpha=0.4, label=r'Delayed Elastic ($E_2, \eta_2$)')
+ax.fill_between(t, instant+delayed, total, color='#9b59b6', alpha=0.4, label=r'Viscous Flow ($\eta_1$)')
 
 ax.set_title('Burgers Model: Creep Strain Breakdown', fontsize=16, fontweight='bold')
 ax.set_xlabel('Time (t)', fontsize=12)
-ax.set_ylabel('Strain ($\epsilon$)', fontsize=12)
+ax.set_ylabel(r'Strain ($\epsilon$)', fontsize=12)
 ax.legend(loc='upper left', fontsize=11)
 
 plt.tight_layout()

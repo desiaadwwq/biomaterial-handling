@@ -56,7 +56,7 @@ print("-" * 60)
 # 3. 시뮬레이션 및 플로팅
 # ============================================================
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
-fig.suptitle("Maxwell Stress Relaxation — $\eta$ Sensitivity Analysis",
+fig.suptitle(r"Maxwell Stress Relaxation — $\eta$ Sensitivity Analysis",
              fontsize=14, fontweight="bold")
 
 for eta, color, label in zip(eta_values, colors, labels_kr):
@@ -76,7 +76,7 @@ for eta, color, label in zip(eta_values, colors, labels_kr):
 
 # $\sigma_0$/e 수평선
 ax1.axhline(y=sigma_0 / np.e, color="gray", linestyle="--", linewidth=1,
-            label=f"$\sigma_0$/e = {sigma_0/np.e:.1f} kPa")
+            label=f"$\\sigma_0$/e = {sigma_0/np.e:.1f} kPa")
 
 ax1.set_xlabel("Time (s)", fontsize=12)
 ax1.set_ylabel("Stress σ(t) (kPa)", fontsize=12)
@@ -95,7 +95,7 @@ for eta, color, label in zip(eta_values, colors, labels_kr):
 
 ax2.set_xlabel("Time (s)", fontsize=12)
 ax2.set_ylabel("Relaxation Modulus E(t) (kPa)", fontsize=12)
-ax2.set_title("Relaxation Modulus E(t) = E $\cdot$ exp(-t/$\\tau_r$)", fontsize=12)
+ax2.set_title(r"Relaxation Modulus E(t) = E $\cdot$ exp(-t/$\tau_r$)", fontsize=12)
 ax2.legend(fontsize=9)
 ax2.grid(True, alpha=0.3)
 ax2.set_xlim(0, 60)

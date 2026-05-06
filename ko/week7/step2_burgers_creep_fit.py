@@ -96,7 +96,7 @@ ax1.grid(True, alpha=0.3)
 
 # 우측: 3단계 분해
 ax2.fill_between(t_fine, 0, instant_comp, alpha=0.3, color="#e74c3c",
-                 label=f"① 즉시 탄성 ($\sigma_0/E_1$ = {SIGMA_0/E1_fit:.2f}%)")
+                 label=f"① 즉시 탄성 ($\\sigma_0/E_1$ = {SIGMA_0/E1_fit:.2f}%)")
 ax2.fill_between(t_fine, instant_comp, delayed_comp, alpha=0.3, color="#f39c12",
                  label="② 지연 탄성 (KV 요소)")
 ax2.fill_between(t_fine, 0, viscous_comp, alpha=0.2, color="#2ecc71",
