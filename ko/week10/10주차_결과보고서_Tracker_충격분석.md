@@ -1,8 +1,17 @@
-# 10주차 실습 결과보고서: Tracker 기반 충격 특성 및 완충재 분석
+# 10주차 실습 결과보고서: 사과(Apple) 가상 낙하 실험 및 Tracker 충격 분석
 
-## 1. Tracker 기반 낙하 궤적 분석 그래프
+## 🔬 가상 실험 환경 (Virtual Experiment Setup)
+본 보고서는 실제 사과(Fuji Apple)를 1.0m 높이에서 자유 낙하 시킨 후 고속 카메라(240fps)로 촬영하여 Tracker 비디오 분석 소프트웨어로 궤적을 추적했다는 **가정 하에 시뮬레이션된 가상 데이터를 바탕으로 작성**되었습니다.
+- **실험 대상**: 사과 (질량 $m = 0.25\text{kg}$)
+- **낙하 높이**: $1.0\text{m}$ (초기 속도 $0\text{m/s}$에서 자유 낙하)
+- **충돌 표면 조건**: 맨바닥(Hard Surface) vs 완충재 적용(Soft Surface)
+- **손상 임계치**: 최대 충격력 $150\text{N}$ 초과 시 사과 내부 조직 파괴(멍, Bruise) 발생으로 간주
 
-자유 낙하하는 과일의 움직임을 Tracker로 추적하여 얻은 가상의 속도 데이터를 바탕으로 시뮬레이션한 **위치-시간(Position-Time)** 및 **가속도-시간(Acceleration-Time)** 그래프입니다.
+---
+
+## 1. Tracker 기반 사과 낙하 궤적 분석 그래프
+
+가상의 스마트폰 고속 촬영 및 Tracker 추적을 통해 추출한 속도 데이터를 기반으로 시뮬레이션한 사과의 **위치-시간(Position-Time)** 및 **가속도-시간(Acceleration-Time)** 궤적 그래프입니다.
 
 ### 1.1 위치-시간 (Position-Time) 그래프
 ![위치-시간 그래프](file:///c:/Users/sin12/Desktop/Bioresource%20processing%20engineering/biomaterial-handling-main/ko/week10/images/tracker_position_time.png)
@@ -19,7 +28,7 @@
 충돌 직전의 속도를 $v_1$, 충돌 직후 튕겨져 나가는 속도를 $v_2$라고 할 때, 반발 계수(Coefficient of Restitution, $e$)는 다음과 같이 계산됩니다.
 $$ e = \frac{|v_2|}{|v_1|} $$
 
-질량($m = 0.25\text{kg}$), 낙하 높이($h = 1.0\text{m}$) 기준의 분석 결과표입니다. 충격량 $I = m(v_2 - v_1) = F_{max} \cdot \Delta t$ 식을 이용하여 최대 충격력을 산출했습니다.
+사과의 질량($m = 0.25\text{kg}$), 낙하 높이($h = 1.0\text{m}$) 기준의 가상 실험 데이터 분석 결과표입니다. 충격량 $I = m(v_2 - v_1) = F_{max} \cdot \Delta t$ 식을 이용하여 사과에 가해지는 최대 충격력을 산출했습니다.
 
 | 조건 | 충돌 직전 속도 ($v_1$) | 충돌 직후 속도 ($v_2$) | 반발 계수 ($e$) | 충돌 소요 시간 ($\Delta t$) | 최대 충격력 ($F_{max}$) | 손상 여부 (임계치 150N 기준) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
