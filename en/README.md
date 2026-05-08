@@ -1,5 +1,7 @@
 # 🌾 Biomaterial Handling & Processing – Lab Course
 
+> **Author / Rights Holder:** 전북대학교 생물산업기계공학과 유동수 (ryudongsoo@jbnu.ac.kr)
+
 This repository serves as the official portfolio and resource hub for the **Biomaterial Handling & Processing** course, consolidating weekly programming assignments and data analysis lab code.
 
 > 📌 **[한국어 버전 (Korean Version)](../ko/README.md)** 도 제공됩니다.
@@ -83,6 +85,19 @@ Analyze contact radius, maximum stress, and pressure distribution of curved biom
   - [`step2_pressure_distribution.py`](week9/step2_pressure_distribution.py): 3D visualization of contact pressure distribution + stress profile by depth
   - [`step3_hertz_contact_simulator.py`](week9/step3_hertz_contact_simulator.py): Interactive contact simulator (sliders + radio buttons)
 - ➡️ **[View Detailed Lab Tutorial for This Week](week9/Week09_Lab_Contact_Stress_Hertz.md)**
+
+
+### [Week 11] Optical Properties & Color Engineering
+Analyzing color space characteristics (HSV, CIE Lab) from agricultural images to implement machine vision-based automated sorting mechanisms.
+- **Main Scripts**:
+  - `step1_color_sorting.py`: Color space conversion from BGR to HSV and CIE Lab, thresholding to extract ripeness (Red) regions of tomatoes, and comparative visualization.
+- ➡️ **[View Detailed Lab Tutorial](week11/Week11_Lab_Color_Engineering.md)**
+
+### [Week 12] Optical Properties II — Spectroscopy
+Applying multivariate data analysis techniques based on Near-Infrared (NIR) absorbance spectrum data to non-destructively predict internal Brix.
+- **Main Scripts**:
+  - `step1_spectroscopy_plsr.py`: Spectral data preprocessing (SNV, Savitzky-Golay 1st derivative) across wavelengths, Partial Least Squares Regression (PLSR) model training, and prediction error analysis (R², RMSE) visualization.
+- ➡️ **[View Detailed Lab Tutorial](week12/Week12_Lab_Spectroscopy.md)**
 
 ### [Week 10] Impact Characteristics & Damage Prediction Modeling — Mechanical Properties II
 Track the dropping impact behavior of biomaterials using Tracker video analysis software, and utilize Python to calculate the coefficient of restitution and simulate whether the critical damage energy (Bio-yield) is exceeded.
@@ -168,3 +183,12 @@ Update the `README.md` file in the top-level folder each week to build your port
 
 ---
 *After completing your assignment, submit your GitHub repository URL (e.g., `https://github.com/your-username/biomaterial-handling/tree/main/en/week02`) to your TA/professor for final grading.*
+
+
+## 📝 변경 이력 (Changelog)
+
+- **2026-05-03 00:56:51** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add english translation for Tracker manual and update python script
+- **2026-05-03 00:54:13** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add Tracker video analysis manual and interactive impact simulation
+- **2026-05-02 15:51:55** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] Update week 10 materials: impact characteristics and damage prediction
+- **2026-04-28 17:04:21** [[ryu-dongsoo](mailto:ryudongsoo@jbnu.ac.kr)] 최근 변경사항 업데이트 (week7)
+- **2026-04-28 16:58:13** [[unknown](mailto:41464@staff.jbnu.ac.kr)] Apply writing-style guidelines to README and QUIZ_BANK

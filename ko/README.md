@@ -1,5 +1,7 @@
 # 🌾 생물자원가공공학 및 실습 (Biomaterial Handling & Processing)
 
+> **Author / Rights Holder:** 전북대학교 생물산업기계공학과 유동수 (ryudongsoo@jbnu.ac.kr)
+
 본 저장소(Repository)는 **생물자원가공공학 및 실습** 교과의 주차별 프로그래밍 과제 및 데이터 분석 실습 코드를 통합 관리하기 위한 공식 포트폴리오(또는 제공용) 최상위 루트 공간임
 
 > 📌 **[English Version](../en/README.md)** is also available for international students.
@@ -84,6 +86,19 @@
   - [`step3_hertz_contact_simulator.py`](week9/step3_hertz_contact_simulator.py): 인터랙티브 접촉 시뮬레이터 (슬라이더 + 라디오 버튼)
 - ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week9/09주차_실습_접촉응력_헤르츠이론.md)**
 
+
+### [Week 11] 광학적 특성과 색채 공학 — 자동 선별
+디지털 카메라로 촬영된 농산물 이미지에서 색채 공간(HSV, CIE Lab) 특성을 분석하고 머신비전 기반의 자동 선별 메커니즘을 구현함
+- **주요 학습 스크립트**:
+  - `step1_color_sorting.py`: BGR 색 공간을 HSV 및 CIE Lab으로 변환, 색상 임계값을 통한 토마토의 숙도(Red) 영역 추출 및 비교 시각화
+- ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week11/11주차_실습_광학적특성_색채공학.md)**
+
+### [Week 12] 광학적 특성 II — 내부 품질 평가 및 분광 분석
+근적외선(NIR) 흡광도 스펙트럼 데이터를 기반으로 다변량 데이터 분석 기법을 적용하여 생물체의 내부 당도(Brix)를 비파괴적으로 예측함
+- **주요 학습 스크립트**:
+  - `step1_spectroscopy_plsr.py`: 파장별 스펙트럼 데이터 전처리(SNV, Savitzky-Golay 1차 미분) 및 부분 최소 자승 회귀(PLSR) 모델 학습, 예측 오차 분석(R², RMSE) 시각화
+- ➡️ **[해당 주차 상세 실습 튜토리얼 보기](week12/12주차_실습_광학적특성_분광분석.md)**
+
 ### [Week 10] 충격 특성과 손상 예측 모델링 — 기계적 특성 II
 오픈소스 물리 분석 도구인 Tracker 비디오 분석 소프트웨어를 활용하여 생물체의 낙하 충격 거동을 추적하고, 파이썬 기반으로 반발 계수 산출 및 한계 손상 에너지(Bio-yield) 초과 여부를 시뮬레이션함
 - **주요 학습 스크립트**:
@@ -164,6 +179,17 @@
   - `[Week 08]` 중간고사 (2~7주차 범위)
   - `[Week 09]` 헤르츠 접촉 응력 계산기, 3D 압력 분포 시각화, 인터랙티브 시뮬레이터 개발
   - `[Week 10]` Tracker 물리 분석 기반 과일 낙하 반발 계수 측정 및 충격 손상 예측 스크립트 구현
+  - `[Week 11]` 색 공간 변환 기반 숙도 분할 모델 구현
+  - `[Week 12]` NIR 분광 스펙트럼 전처리 및 당도 예측 모델링 실습
 
 ---
 *과제 제출 완료 후, 본인의 GitHub 저장소 URL(예: `https://github.com/아이디/biomaterial-handling/tree/main/ko/week02`)을 조교/교수에게 제출하여 최종 성적에 반영함*
+
+
+## 📝 변경 이력 (Changelog)
+
+- **2026-05-03 00:56:51** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add english translation for Tracker manual and update python script
+- **2026-05-03 00:54:13** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add Tracker video analysis manual and interactive impact simulation
+- **2026-05-02 15:51:55** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] Update week 10 materials: impact characteristics and damage prediction
+- **2026-04-28 17:04:21** [[ryu-dongsoo](mailto:ryudongsoo@jbnu.ac.kr)] 최근 변경사항 업데이트 (week7)
+- **2026-04-28 16:58:13** [[unknown](mailto:41464@staff.jbnu.ac.kr)] Apply writing-style guidelines to README and QUIZ_BANK
