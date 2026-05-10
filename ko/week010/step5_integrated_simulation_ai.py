@@ -193,8 +193,11 @@ def update_sim(val=None):
     t_end = t_fall + 0.10
     
     ax_force.set_xlim(t_start, t_end)
-    ax_pos.set_xlim(t_start, t_end)
     ax_accel.set_xlim(t_start, t_end)
+    
+    # 위치-시간 그래프는 반발 궤적을 관찰할 수 있도록 x축 넓게 유지, y축은 낙하 높이에 맞춰 동적 조절
+    ax_pos.set_xlim(0, t_total)
+    ax_pos.set_ylim(-0.1, h * 1.1)
     
     # 가속도 Y축 동적 스케일링 (최대 가속도에 맞춤)
     y_h, f_h, a_h = calc_traj(m, h, pack_props[0][0], pack_props[0][1])
