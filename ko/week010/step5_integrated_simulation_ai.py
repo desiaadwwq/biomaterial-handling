@@ -157,6 +157,10 @@ def update_sim(val=None):
     m = s_mass.val
     h = s_height.val
     
+    # 충격 발생 순간으로 그래프 동적 확대 (Zoom-in)
+    t_fall = np.sqrt(2 * h / g)
+    ax_force.set_xlim(max(0, t_fall - 0.05), t_fall + 0.10)
+    
     # 1. 역학 계산 (차트 1, 2 업데이트용)
     y_h, f_h, _ = calc_traj(m, h, pack_props[0][0], pack_props[0][1])
     y_e, f_e, _ = calc_traj(m, h, pack_props[1][0], pack_props[1][1])
