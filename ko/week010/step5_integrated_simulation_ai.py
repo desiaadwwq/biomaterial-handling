@@ -94,7 +94,7 @@ fig.subplots_adjust(bottom=0.25, wspace=0.3)
 fig.suptitle('[Step 2 + 3 통합] 역학 시뮬레이션 & AI 파손 예측기', fontsize=18, fontweight='bold')
 
 # [차트 1] 물리 낙하 애니메이션
-ax_anim = plt.subplot(1, 3, 1)
+ax_anim = plt.subplot(1, 4, 1)
 ax_anim.set_xlim(-0.5, 3.5)
 ax_anim.set_ylim(-0.15, 2.5)
 ax_anim.set_xticks([0, 1, 2, 3])
@@ -114,8 +114,8 @@ apple_e, = ax_anim.plot([], [], color='orange', marker='o', markersize=15, lines
 apple_b, = ax_anim.plot([], [], 'bo', markersize=15)
 apple_t, = ax_anim.plot([], [], 'go', markersize=15)
 
-# [차트 2] 뉴턴 제2법칙 기반 시간에 따른 충격력
-ax_force = plt.subplot(1, 3, 2)
+# [차트 2] 뉴턴 제2법칙 기반 시간에 따른 충격력 (넓게 표시)
+ax_force = plt.subplot(1, 4, (2, 3))
 ax_force.set_xlim(0, t_total)
 ax_force.set_ylim(0, 900)
 ax_force.set_title('물리 역학적 충격력 (Newton)', fontsize=14)
@@ -131,7 +131,7 @@ line_f_t, = ax_force.plot([], [], 'g-', lw=2, label='트레이')
 ax_force.legend(loc='upper right', fontsize=9)
 
 # [차트 3] AI 파손 확률 바 차트
-ax_ai = plt.subplot(1, 3, 3)
+ax_ai = plt.subplot(1, 4, 4)
 ax_ai.set_ylim(0, 100)
 ax_ai.set_title('AI 학습 기반 실시간 손상 확률', fontsize=14)
 ax_ai.set_ylabel('손상 확률 (%)')
