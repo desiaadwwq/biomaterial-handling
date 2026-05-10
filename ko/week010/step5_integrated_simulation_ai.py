@@ -187,9 +187,14 @@ def update_sim(val=None):
     m = s_mass.val
     h = s_height.val
     
-    # 임팩트 줌인
+    # 임팩트 줌인 (충격 발생 순간으로 가로축 확대)
     t_fall = np.sqrt(2 * h / g)
-    ax_force.set_xlim(max(0, t_fall - 0.05), t_fall + 0.10)
+    t_start = max(0, t_fall - 0.05)
+    t_end = t_fall + 0.10
+    
+    ax_force.set_xlim(t_start, t_end)
+    ax_pos.set_xlim(t_start, t_end)
+    ax_accel.set_xlim(t_start, t_end)
     
     # 가속도 Y축 동적 스케일링 (최대 가속도에 맞춤)
     y_h, f_h, a_h = calc_traj(m, h, pack_props[0][0], pack_props[0][1])
