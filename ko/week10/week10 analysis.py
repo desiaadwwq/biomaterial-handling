@@ -212,11 +212,11 @@ def update_sim(val=None):
     
     ax_force.set_xlim(t_start, t_end)
     ax_accel.set_xlim(t_start, t_end)
-    ax_vel.set_xlim(t_start, t_end)
     
-    # 위치-시간 그래프는 반발 궤적을 관찰할 수 있도록 x축 넓게 유지, y축은 낙하 높이에 맞춰 동적 조절
+    # 위치/속도-시간 그래프는 전체 궤적 관찰을 위해 x축 넓게 유지, y축은 동적 조절
     ax_pos.set_xlim(0, t_total)
     ax_pos.set_ylim(-0.1, h * 1.1)
+    ax_vel.set_xlim(0, t_total)
     
     # 역학 계산 (y: 위치, f: 힘, a: 가속도, v: 속도)
     y_h, f_h, a_h, v_h = calc_traj(m, h, pack_props[0][0], pack_props[0][1])
