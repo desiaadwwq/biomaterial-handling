@@ -864,3 +864,109 @@ When a free-falling apple hits the ground at the exact same velocity, what is th
 ---
 
 *This document is updated as new weeks are added.*
+
+
+---
+
+# Week 11: Optical Properties and Color Engineering
+> 🔗 [View Detailed Lab Tutorial](week11/Week11_Lab_Color_Engineering.md)
+
+## 💡 Advanced Discussion Topics
+
+### Discussion 1: Illumination Changes in Industrial Sites and Robustness of Color Spaces
+**Background**: The lab used images taken under fixed lighting, but in actual agricultural sorting factories, brightness fluctuates frequently due to sunlight or aging lights.
+> **Topic**: Compared to the RGB space, discuss dynamically whether HSV or CIE Lab color space is more advantageous in minimizing sorting errors under environments with extreme lighting changes, based on their structures.
+
+### Discussion 2: The Discrepancy Between Surface Color and Internal Quality in Non-destructive Brix Sorting
+**Background**: Generally, the redder the surface of a tomato, the higher its ripeness, but depending on the variety or growing environment, actual Brix might be low despite a deep red color.
+> **Topic**: To overcome the fundamental limitations of camera-based (surface color) vision sorting systems, what kind of additional sensors should be fused to design a sorter that completely guarantees internal quality?
+
+## 📝 Evaluation Quizzes
+
+### Q1. [Theory] Illumination Independence by Color Space
+Which of the following color coordinate systems completely separates illumination brightness (lightness) into a distinct channel, making it the least sensitive to external lighting changes when analyzing color information?
+| Option | Content |
+| --- | --- |
+| A | RGB Color Space |
+| B | CMYK Color Space |
+| **C** | **CIE Lab Color Space** |
+| D | Grayscale |
+
+<details>
+<summary>View Answer and Explanation</summary>
+
+**Answer: C** — In CIE Lab, the L channel representing brightness is physically independent of the a and b channels representing color, making it the most robust against lighting changes.
+</details>
+
+### Q2. [Lab] Characteristics of Red Region Distribution in HSV Space
+When trying to extract red objects in OpenCV's HSV color space, why do we create and combine (`bitwise_or`) two `cv2.inRange` masks?
+| Option | Content |
+| --- | --- |
+| A | Because red exists in two forms: the darkest and the brightest |
+| **B** | **Because the red wavelength is distributed across both extremities (near 0 and near 179) in the Hue cylinder model** |
+| C | To distinguish between low-saturation red and high-saturation red |
+| D | To avoid OpenCV internal memory allocation limits |
+
+<details>
+<summary>View Answer and Explanation</summary>
+
+**Answer: B** — OpenCV's H (Hue) value ranges from 0 to 179, and the color red is split across both ends of the spectrum (0~10 and 170~179).
+</details>
+
+---
+
+# Week 12: Optical Properties II - Spectroscopy
+> 🔗 [View Detailed Lab Tutorial](week12/Week12_Lab_Spectroscopy.md)
+
+## 💡 Advanced Discussion Topics
+
+### Discussion 3: The Risk of Information Loss in 1st Derivative Spectral Preprocessing
+**Background**: Savitzky-Golay 1st derivative preprocessing effectively removed baseline drift to make peaks sharper.
+> **Topic**: Derivative operations inevitably destroy the absolute scale information of specific absorbances inherent in raw data. Under what exceptional circumstances might derivative preprocessing not necessarily improve model performance (R²), and why?
+
+## 📝 Evaluation Quizzes
+
+### Q3. [Theory] Justification for Applying Partial Least Squares Regression (PLSR)
+What is the most critical statistical reason for adopting a **PLSR (Partial Least Squares Regression)** model over general Multiple Linear Regression (MLR) in Near-Infrared (NIR) spectroscopic analysis?
+| Option | Content |
+| --- | --- |
+| A | Because it is dozens of times faster to compute than MLR |
+| B | Because it is the only way to handle categorical variables |
+| **C** | **Because the number of wavelengths (variables) far exceeds the number of samples, and strong multicollinearity exists between adjacent wavelengths** |
+| D | Because it has the ability to self-remove spectrum noise without filtering |
+
+<details>
+<summary>View Answer and Explanation</summary>
+
+**Answer: C** — PLSR completely resolves the multicollinearity problem by compressing hundreds of highly correlated wavelength variables into a few Latent Variables for regression.
+</details>
+
+### Q4. [Lab] Main Functions of the Savitzky-Golay Filter
+What are the two main mathematical effects achieved by applying Python's `savgol_filter` when preprocessing spectroscopic data?
+| Option | Content |
+| --- | --- |
+| A | Data compression and dimensionality reduction |
+| **B** | **Smoothing (noise removal) via local polynomial approximation and derivative transformation** |
+| C | Automatic detection and deletion of outliers |
+| D | Frequency domain analysis via Fourier transform |
+
+<details>
+<summary>View Answer and Explanation</summary>
+
+**Answer: B** — It smoothly removes noise by fitting a polynomial within a specified window size, while simultaneously performing a derivative to extract peak features of the signal.
+</details>
+
+### Q5. [Theory] Performance Evaluation Metrics (R² and RMSE)
+The evaluation results on the test set yielded `Test R² = 0.92, RMSE = 0.65`. Which of the following is the most accurate interpretation of these metrics?
+| Option | Content |
+| --- | --- |
+| A | The model explains 65% of the Brix variability, with an average prediction error of 0.92 Brix. |
+| **B** | **The model can explain 92% of the actual Brix variance, and the predicted values differ from actual values by about 0.65 Brix on average.** |
+| C | It correctly predicted 92 out of 100 samples, and the 8 incorrect ones had an error of 0.65. |
+| D | It is perfectly overfitted to the training data and cannot be used in actual fields. |
+
+<details>
+<summary>View Answer and Explanation</summary>
+
+**Answer: B** — An R² of 0.92 means the model's explanatory power is excellent at 92%, and an RMSE of 0.65 intuitively shows the average error magnitude of predictions compared to actual measured values.
+</details>

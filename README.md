@@ -1,5 +1,7 @@
 # 🌾 생물자원가공공학 및 실습 | Biomaterial Handling & Processing
 
+> **Author / Rights Holder:** 전북대학교 생물산업기계공학과 유동수 (ryudongsoo@jbnu.ac.kr)
+
 > **이중 언어 저장소 (Bilingual Repository)**  
 > 본 저장소는 한국어와 영어 두 가지 언어로 제공됩니다.  
 > This repository is available in both Korean and English.
@@ -24,6 +26,8 @@
 | Week 08 | 중간고사 | — |
 | Week 09 | 접촉 응력과 헤르츠 이론 — 기계적 특성 I | [`ko/week9/`](ko/week9/) |
 | Week 10 | 충격 특성과 손상 예측 모델링 — 기계적 특성 II | [`ko/week10/`](ko/week10/) |
+| Week 11 | 광학적 특성과 색채 공학 — 자동 선별 | [`ko/week11/`](ko/week11/) |
+| Week 12 | 광학적 특성 II — 분광 분석 | [`ko/week12/`](ko/week12/) |
 
 > 📝 **[주차별 심화 토론 & 퀴즈 모음](ko/QUIZ_BANK.md)**
 
@@ -83,3 +87,12 @@ biomaterial-handling/
 ---
 
 *© 2026 Biomaterial Handling & Processing Lab Course*
+
+
+## 📝 변경 이력 (Changelog)
+
+- **2026-05-03 00:56:51** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add english translation for Tracker manual and update python script
+- **2026-05-03 00:54:13** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] feat(week10): add Tracker video analysis manual and interactive impact simulation
+- **2026-05-02 15:51:55** [[Dongsoo Ryu](mailto:ryudongsoo@gmail.com)] Update week 10 materials: impact characteristics and damage prediction
+- **2026-04-28 17:04:21** [[ryu-dongsoo](mailto:ryudongsoo@jbnu.ac.kr)] 최근 변경사항 업데이트 (week7)
+- **2026-04-28 16:58:13** [[unknown](mailto:41464@staff.jbnu.ac.kr)] Apply writing-style guidelines to README and QUIZ_BANK
